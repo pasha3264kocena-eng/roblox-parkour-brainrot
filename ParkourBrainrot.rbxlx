@@ -1,0 +1,413 @@
+<roblox version="4">
+  <Item class="DataModel" referent="DataModel">
+    <Properties>
+      <string name="Name">Parkour Brainrot</string>
+    </Properties>
+    <Item class="Workspace" referent="Workspace">
+      <Properties>
+        <string name="Name">Workspace</string>
+      </Properties>
+      <Item class="Folder" referent="ZonesFolder">
+        <Properties>
+          <string name="Name">Zones</string>
+        </Properties>
+        <Item class="Folder" referent="EasyZone">
+          <Properties>
+            <string name="Name">EasyZone</string>
+          </Properties>
+          <Item class="Part" referent="EasyStart">
+            <Properties>
+              <string name="Name">Start</string>
+              <Vector3 name="Size">10 1 10</Vector3>
+              <Vector3 name="Position">0 5 0</Vector3>
+              <Color3 name="Color">0.258824 0.784314 0.45098</Color3>
+              <bool name="Anchored">true</bool>
+            </Properties>
+          </Item>
+          <Item class="Part" referent="EasyPlatform1">
+            <Properties>
+              <string name="Name">Platform1</string>
+              <Vector3 name="Size">8 1 8</Vector3>
+              <Vector3 name="Position">15 7 0</Vector3>
+              <Color3 name="Color">0.27451 0.607843 0.858824</Color3>
+              <bool name="Anchored">true</bool>
+            </Properties>
+          </Item>
+          <Item class="Part" referent="EasyCheckpoint1">
+            <Properties>
+              <string name="Name">Checkpoint</string>
+              <Vector3 name="Size">6 1 6</Vector3>
+              <Vector3 name="Position">30 9 0</Vector3>
+              <Color3 name="Color">0.960784 0.803922 0.188235</Color3>
+              <bool name="Anchored">true</bool>
+            </Properties>
+          </Item>
+          <Item class="Part" referent="EasyMovingPlatform">
+            <Properties>
+              <string name="Name">MovingPlatform</string>
+              <Vector3 name="Size">8 1 8</Vector3>
+              <Vector3 name="Position">45 11 0</Vector3>
+              <Color3 name="Color">0.603922 0.403922 0.784314</Color3>
+              <bool name="Anchored">true</bool>
+            </Properties>
+            <Item class="Script" referent="EasyMovingScript">
+              <Properties>
+                <string name="Name">MoveScript</string>
+                <ProtectedString name="Source"><![CDATA[
+local platform = script.Parent
+local tweenService = game:GetService("TweenService")
+local startPos = platform.Position
+local endPos = startPos + Vector3.new(0, 0, 12)
+local info = TweenInfo.new(3, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut, -1, true)
+local tween = tweenService:Create(platform, info, {Position = endPos})
+
+tween:Play()
+]]></ProtectedString>
+              </Properties>
+            </Item>
+          </Item>
+          <Item class="Part" referent="EasyKillPart">
+            <Properties>
+              <string name="Name">KillPart</string>
+              <Vector3 name="Size">20 1 20</Vector3>
+              <Vector3 name="Position">60 3 0</Vector3>
+              <Color3 name="Color">0.8 0.2 0.2</Color3>
+              <bool name="Anchored">true</bool>
+              <float name="Transparency">0.3</float>
+            </Properties>
+          </Item>
+          <Item class="Part" referent="EasyFinish">
+            <Properties>
+              <string name="Name">Finish</string>
+              <Vector3 name="Size">10 1 10</Vector3>
+              <Vector3 name="Position">75 13 0</Vector3>
+              <Color3 name="Color">0.2 0.8 0.2</Color3>
+              <bool name="Anchored">true</bool>
+            </Properties>
+          </Item>
+        </Item>
+        <Item class="Folder" referent="MediumZone">
+          <Properties>
+            <string name="Name">MediumZone</string>
+          </Properties>
+          <Item class="Part" referent="MediumStart">
+            <Properties>
+              <string name="Name">Start</string>
+              <Vector3 name="Size">10 1 10</Vector3>
+              <Vector3 name="Position">0 5 40</Vector3>
+              <Color3 name="Color">0.258824 0.784314 0.45098</Color3>
+              <bool name="Anchored">true</bool>
+            </Properties>
+          </Item>
+          <Item class="Part" referent="MediumPlatform1">
+            <Properties>
+              <string name="Name">Platform1</string>
+              <Vector3 name="Size">6 1 6</Vector3>
+              <Vector3 name="Position">15 8 40</Vector3>
+              <Color3 name="Color">0.27451 0.607843 0.858824</Color3>
+              <bool name="Anchored">true</bool>
+            </Properties>
+          </Item>
+          <Item class="Part" referent="MediumCheckpoint1">
+            <Properties>
+              <string name="Name">Checkpoint</string>
+              <Vector3 name="Size">6 1 6</Vector3>
+              <Vector3 name="Position">28 10 40</Vector3>
+              <Color3 name="Color">0.960784 0.803922 0.188235</Color3>
+              <bool name="Anchored">true</bool>
+            </Properties>
+          </Item>
+          <Item class="Part" referent="MediumMovingPlatform">
+            <Properties>
+              <string name="Name">MovingPlatform</string>
+              <Vector3 name="Size">6 1 6</Vector3>
+              <Vector3 name="Position">42 12 40</Vector3>
+              <Color3 name="Color">0.603922 0.403922 0.784314</Color3>
+              <bool name="Anchored">true</bool>
+            </Properties>
+            <Item class="Script" referent="MediumMovingScript">
+              <Properties>
+                <string name="Name">MoveScript</string>
+                <ProtectedString name="Source"><![CDATA[
+local platform = script.Parent
+local tweenService = game:GetService("TweenService")
+local startPos = platform.Position
+local endPos = startPos + Vector3.new(0, 0, 16)
+local info = TweenInfo.new(4, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut, -1, true)
+local tween = tweenService:Create(platform, info, {Position = endPos})
+
+tween:Play()
+]]></ProtectedString>
+              </Properties>
+            </Item>
+          </Item>
+          <Item class="Part" referent="MediumKillPart">
+            <Properties>
+              <string name="Name">KillPart</string>
+              <Vector3 name="Size">22 1 22</Vector3>
+              <Vector3 name="Position">58 4 40</Vector3>
+              <Color3 name="Color">0.8 0.2 0.2</Color3>
+              <bool name="Anchored">true</bool>
+              <float name="Transparency">0.3</float>
+            </Properties>
+          </Item>
+          <Item class="Part" referent="MediumFinish">
+            <Properties>
+              <string name="Name">Finish</string>
+              <Vector3 name="Size">10 1 10</Vector3>
+              <Vector3 name="Position">75 14 40</Vector3>
+              <Color3 name="Color">0.2 0.8 0.2</Color3>
+              <bool name="Anchored">true</bool>
+            </Properties>
+          </Item>
+        </Item>
+        <Item class="Folder" referent="HardZone">
+          <Properties>
+            <string name="Name">HardZone</string>
+          </Properties>
+          <Item class="Part" referent="HardStart">
+            <Properties>
+              <string name="Name">Start</string>
+              <Vector3 name="Size">10 1 10</Vector3>
+              <Vector3 name="Position">0 5 80</Vector3>
+              <Color3 name="Color">0.258824 0.784314 0.45098</Color3>
+              <bool name="Anchored">true</bool>
+            </Properties>
+          </Item>
+          <Item class="Part" referent="HardPlatform1">
+            <Properties>
+              <string name="Name">Platform1</string>
+              <Vector3 name="Size">4 1 4</Vector3>
+              <Vector3 name="Position">14 9 80</Vector3>
+              <Color3 name="Color">0.27451 0.607843 0.858824</Color3>
+              <bool name="Anchored">true</bool>
+            </Properties>
+          </Item>
+          <Item class="Part" referent="HardCheckpoint1">
+            <Properties>
+              <string name="Name">Checkpoint</string>
+              <Vector3 name="Size">5 1 5</Vector3>
+              <Vector3 name="Position">26 12 80</Vector3>
+              <Color3 name="Color">0.960784 0.803922 0.188235</Color3>
+              <bool name="Anchored">true</bool>
+            </Properties>
+          </Item>
+          <Item class="Part" referent="HardMovingPlatform">
+            <Properties>
+              <string name="Name">MovingPlatform</string>
+              <Vector3 name="Size">4 1 4</Vector3>
+              <Vector3 name="Position">40 14 80</Vector3>
+              <Color3 name="Color">0.603922 0.403922 0.784314</Color3>
+              <bool name="Anchored">true</bool>
+            </Properties>
+            <Item class="Script" referent="HardMovingScript">
+              <Properties>
+                <string name="Name">MoveScript</string>
+                <ProtectedString name="Source"><![CDATA[
+local platform = script.Parent
+local tweenService = game:GetService("TweenService")
+local startPos = platform.Position
+local endPos = startPos + Vector3.new(0, 0, 20)
+local info = TweenInfo.new(5, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut, -1, true)
+local tween = tweenService:Create(platform, info, {Position = endPos})
+
+tween:Play()
+]]></ProtectedString>
+              </Properties>
+            </Item>
+          </Item>
+          <Item class="Part" referent="HardKillPart">
+            <Properties>
+              <string name="Name">KillPart</string>
+              <Vector3 name="Size">24 1 24</Vector3>
+              <Vector3 name="Position">56 5 80</Vector3>
+              <Color3 name="Color">0.8 0.2 0.2</Color3>
+              <bool name="Anchored">true</bool>
+              <float name="Transparency">0.3</float>
+            </Properties>
+          </Item>
+          <Item class="Part" referent="HardFinish">
+            <Properties>
+              <string name="Name">Finish</string>
+              <Vector3 name="Size">10 1 10</Vector3>
+              <Vector3 name="Position">75 15 80</Vector3>
+              <Color3 name="Color">0.2 0.8 0.2</Color3>
+              <bool name="Anchored">true</bool>
+            </Properties>
+          </Item>
+        </Item>
+      </Item>
+    </Item>
+    <Item class="ServerScriptService" referent="ServerScriptService">
+      <Properties>
+        <string name="Name">ServerScriptService</string>
+      </Properties>
+      <Item class="Script" referent="CheckpointScript">
+        <Properties>
+          <string name="Name">CheckpointScript</string>
+          <ProtectedString name="Source"><![CDATA[
+local Players = game:GetService("Players")
+
+local function getCheckpointValue(player)
+  local existing = player:FindFirstChild("CheckpointCFrame")
+  if existing then
+    return existing
+  end
+  local value = Instance.new("CFrameValue")
+  value.Name = "CheckpointCFrame"
+  value.Value = CFrame.new(0, 8, 0)
+  value.Parent = player
+  return value
+end
+
+local function setupCharacter(player, character)
+  local humanoidRoot = character:WaitForChild("HumanoidRootPart", 5)
+  local checkpointValue = getCheckpointValue(player)
+  if humanoidRoot and checkpointValue.Value then
+    humanoidRoot.CFrame = checkpointValue.Value
+  end
+end
+
+Players.PlayerAdded:Connect(function(player)
+  player.CharacterAdded:Connect(function(character)
+    setupCharacter(player, character)
+  end)
+end)
+
+local function bindCheckpoint(part)
+  part.Touched:Connect(function(hit)
+    local character = hit.Parent
+    local humanoid = character and character:FindFirstChildWhichIsA("Humanoid")
+    if not humanoid then
+      return
+    end
+    local player = Players:GetPlayerFromCharacter(character)
+    if not player then
+      return
+    end
+    local checkpointValue = getCheckpointValue(player)
+    checkpointValue.Value = part.CFrame + Vector3.new(0, 4, 0)
+  end)
+end
+
+local function bindKillPart(part)
+  part.Touched:Connect(function(hit)
+    local character = hit.Parent
+    local humanoid = character and character:FindFirstChildWhichIsA("Humanoid")
+    if humanoid then
+      humanoid.Health = 0
+    end
+  end)
+end
+
+local zones = workspace:WaitForChild("Zones")
+for _, zone in ipairs(zones:GetChildren()) do
+  for _, part in ipairs(zone:GetChildren()) do
+    if part:IsA("BasePart") and part.Name == "Checkpoint" then
+      bindCheckpoint(part)
+    elseif part:IsA("BasePart") and part.Name == "KillPart" then
+      bindKillPart(part)
+    end
+  end
+end
+
+workspace.DescendantAdded:Connect(function(descendant)
+  if descendant:IsA("BasePart") and descendant.Name == "Checkpoint" then
+    bindCheckpoint(descendant)
+  elseif descendant:IsA("BasePart") and descendant.Name == "KillPart" then
+    bindKillPart(descendant)
+  end
+end)
+]]></ProtectedString>
+        </Properties>
+      </Item>
+      <Item class="Script" referent="BrainrotRewardScript">
+        <Properties>
+          <string name="Name">BrainrotRewardScript</string>
+          <ProtectedString name="Source"><![CDATA[
+local Players = game:GetService("Players")
+
+local rewards = {
+  EasyZone = "Common Brainrot",
+  MediumZone = "Uncommon Brainrot",
+  HardZone = "Rare Brainrot",
+}
+
+local function setupLeaderstats(player)
+  local leaderstats = Instance.new("Folder")
+  leaderstats.Name = "leaderstats"
+  leaderstats.Parent = player
+
+  local brainrotCount = Instance.new("IntValue")
+  brainrotCount.Name = "Brainrot"
+  brainrotCount.Value = 0
+  brainrotCount.Parent = leaderstats
+
+  local lastBrainrot = Instance.new("StringValue")
+  lastBrainrot.Name = "LastBrainrot"
+  lastBrainrot.Value = ""
+  lastBrainrot.Parent = leaderstats
+end
+
+Players.PlayerAdded:Connect(setupLeaderstats)
+
+local function awardBrainrot(player, zoneName)
+  local leaderstats = player:FindFirstChild("leaderstats")
+  if not leaderstats then
+    return
+  end
+  local brainrotCount = leaderstats:FindFirstChild("Brainrot")
+  local lastBrainrot = leaderstats:FindFirstChild("LastBrainrot")
+  if not brainrotCount or not lastBrainrot then
+    return
+  end
+  local rewardName = rewards[zoneName] or "Brainrot"
+  brainrotCount.Value = brainrotCount.Value + 1
+  lastBrainrot.Value = rewardName
+end
+
+local function bindFinish(zone)
+  local finish = zone:FindFirstChild("Finish")
+  if not finish or not finish:IsA("BasePart") then
+    return
+  end
+  finish.Touched:Connect(function(hit)
+    local character = hit.Parent
+    local humanoid = character and character:FindFirstChildWhichIsA("Humanoid")
+    if not humanoid then
+      return
+    end
+    local player = Players:GetPlayerFromCharacter(character)
+    if not player then
+      return
+    end
+    awardBrainrot(player, zone.Name)
+  end)
+end
+
+local zones = workspace:WaitForChild("Zones")
+for _, zone in ipairs(zones:GetChildren()) do
+  bindFinish(zone)
+end
+
+workspace.DescendantAdded:Connect(function(descendant)
+  if descendant:IsA("Folder") and descendant.Parent == zones then
+    bindFinish(descendant)
+  end
+end)
+]]></ProtectedString>
+        </Properties>
+      </Item>
+    </Item>
+    <Item class="StarterPlayer" referent="StarterPlayer">
+      <Properties>
+        <string name="Name">StarterPlayer</string>
+      </Properties>
+      <Item class="StarterCharacterScripts" referent="StarterCharacterScripts">
+        <Properties>
+          <string name="Name">StarterCharacterScripts</string>
+        </Properties>
+      </Item>
+    </Item>
+  </Item>
+</roblox>
